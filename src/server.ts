@@ -36,13 +36,13 @@ export class Server_ {
   private configureApp(): void {
     this.app.use(cors());
     this.app.use('/src', express.static("public"));
-    this.app.use('/', express.static(path.join(__dirname, "../../rtc_client","build")));
+    this.app.use('/', express.static(path.join(__dirname, "../../client_reader_sample","build")));
   }
 
   private handleRoutes(): void {
 
     this.app.get("/", (req, res) => {
-      res.sendFile(path.join(__dirname, "../../rtc_client","build","index.html")); 
+      res.sendFile(path.join(__dirname, "../../client_reader_sample","build","index.html")); 
     });
   }
  
